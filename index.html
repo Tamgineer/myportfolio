@@ -1,0 +1,35 @@
+<h1 id="my-name-is-tamgineer-this-is-my-portfolio">My name is Tamgineer, this is my portfolio</h1>
+<h2 id="raytracing-with-non-photorealism">Raytracing with non photorealism</h2>
+<p><img src="images/materials+Outlines.png" alt="Raytraced image with outlines"></p>
+<h3 id="abstract">abstract</h3>
+<p>I created a pathtracer which can produce artistic effects during rendering.</p>
+<h3 id="introduction-background">introduction &amp; background</h3>
+<p>Raytracing is a method of rendering technique in computer graphics, which simulates the physical transport of light in order to procedurally generate an image onto a screen. My project aims to demonstrate if non photorealistic techniques can be applied in a raytracing context.</p>
+<h3 id="justification-of-project">Justification of project</h3>
+<ul>
+<li>No post processing step</li>
+<li>No texturing</li>
+<li>No inverse hull</li>
+<li>Popularity of “2D look” using 3D animation in the film industry</li>
+<li>Using the same shader under the hood</li>
+<li>Make each object be unique and have control on how they look</li>
+<li>Simulation of interaction of light with materials, whilst maintaining a stylistic look</li>
+</ul>
+<h3 id="implementation">Implementation</h3>
+<p>The raytracer was written in C++17. The raytracer is an adaptation from a tutorial.</p>
+<h3 id="testing">Testing</h3>
+<p>For testing, the results would be qualitative data. I would need to demonstrate that the raytracer can produce 3 examples of non photorealism.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>The outlines were able to work extremely well against flat surfaces, but struggle against reflective smooth surfaces. Cel shading required context in where the light source was.</p>
+<h3 id="evaluation">Evaluation</h3>
+<p>Evaluation
+Overall, from the many challenges I faced when tackling the project, I was satisfied with the output of the outlines that my raytracer could produce, but not with the cel shader nor the painterly rendering. Despite this, I was able to demonstrate non photorealism in my application, as well as conceptualise a few techniques that could be used despite not having the opportunity to attempt the methods.</p>
+<h3 id="future-work">future work</h3>
+<ul>
+<li>mesh importing (including introducing triangles)</li>
+<li>Optimisation</li>
+<li>GPU usage</li>
+<li>Rethinking how rays work could be utilised</li>
+<li>Better BVH for optimisation.</li>
+<li>Optimisation of rendering many planes onto scene (for painterly rendering)</li>
+</ul>
