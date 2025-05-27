@@ -90,3 +90,30 @@ th {
   background-color: #f6f8fa;
   font-weight: 600;
 }
+
+.logo-turn {
+  position: sticky;
+  height: 0px;
+  top: 27px;
+  z-index: -2;
+}
+
+.logo-turn > * {
+  opacity: 50%;
+  translate: -100% -37%;
+
+  animation-name: rotateAnimation;
+  animation-duration: 1ms; /* Firefox requires this to apply the animation */
+  animation-direction: alternate;
+  animation-timeline: scroll(block nearest);
+
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
