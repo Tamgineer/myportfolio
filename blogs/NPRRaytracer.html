@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Non photorealistic raytracer</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+
+</head>
+<body>
+    <!--Navbar-->
+    <p><a href="../index.html">Return</a></p>
+    <div class="heading" align="center">Using raytracing for non photorealistic rendering</div>
+    <div align="center" class="date">May 2025</div>
+    <img class="image-main-xxlarge" src="../images/materials+Outlines.png">
+    <div align="center">
+        <div align="center" class="blog"> 
+            <div class="language-used"> Languages used: <div class="technology"> C++17 </div> </div>
+            <p><a class="link-external" href="https://github.com/Tamgineer/Raytracer">Link to the repository here</a></p> 
+            <p><a class="link-internal" href="Using_non_photorealistic_techniques_on_raytraced_images.pdf">Link to my dissertation here</a></p>
+            <p>I created a pathtracer which can produce artistic effects during rendering. This project is an adaptation of an <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">tutorial</a> by Peter Shirley</p>
+            <div align="center" class="subheading">Introduction and background</div>
+            <p>Raytracing is a method of rendering technique in computer graphics, which simulates the physical transport of light in order to procedurally generate an image onto a screen. My project aims to demonstrate if non photorealistic techniques can be applied in a raytracing context.</p>
+            <div align="center" class="subheading">Justification of project</div>
+            <ul>
+                <li>No post processing step</li>
+                <li>No texturing</li>
+                <li>No inverse hull</li>
+                <li>Popularity of the "2D" look using 3D in the animation and films industry</li>
+                <li>Using the same shader under the hood</li>
+                <li>Make each object be unique and have control on how they look</li>
+                <li>Simulation of interaction of light with materials, whilst maintaining a stylistic look</li>
+            </ul>
+            <div align="center" class="subheading">Aims and objectives</div>
+            <p>For the project I aimed to provide the following:</p>
+            <ul>
+                <li>To provide 3 examples of non photorealism in my project which utilises raytracing (with the minimum goal of 1). This includes creating an image output for a raytracer</li>
+                <li>Produce a raytraced image as an output. The image can be in any image format. The image need to utilise the technique of raytracing in order to create the image.</li>
+                <li>To produce minimal artifacts in the final render.</li>
+            </ul>
+            <div align="center" class="subheading">Testing</div>
+            <p>For testing, the results would be qualitative data. I would need to demonstrate that the raytracer can produce 3 examples of non photorealism.</p>
+            <img class="image-main-large" src="../images/outlines.png">
+            <img class="image-main-large" src="../images/cel.png">
+            <div align="center" class="subheading">Conclusion</div>
+            <p>The outlines were able to work extremely well against flat surfaces, but struggle against reflective smooth surfaces. Cel shading required context in where the light source was.</p>
+            <div align="center" class="subheading">Evaluation</div>
+            <p>Overall, from the many challenges I faced when tackling the project, I was satisfied with the output of the outlines that my raytracer could produce, but not with the cel shader nor the painterly rendering. Despite this, I was able to demonstrate non photorealism in my application, as well as conceptualise a few techniques that could be used despite not having the opportunity to attempt the methods.</p>
+            <div align="center" class="subheading">Future work</div>
+            <ul>
+                <li>Implementation of triangles (followed by mesh importing)</li>
+                <li>Optimisation</li>
+                <li>Use GPU for faster rendering (includes removing recursion)</li>
+                <li>Rethinking how rays could be utilised</li>
+                <li>Better Bounding volume heirarchy for optimisation</li>
+                <li>Optimisation of rendering many planes onto a scene (for better painterly rendering)</li>
+            </ul>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
