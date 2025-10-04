@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Sudoku solver</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+
+</head>
+<body>
+    <!--Navbar-->
+    <p><a href="../index.html">Return</a></p>
+    <div class="heading" align="center">Sudoku solver in C++</div>
+    <div align="center" class="date">October 2025</div>
+    <img class="image-main-xxlarge" src="../images/Sudoku.png">
+    <div align="center">
+        <div align="center" class="blog"> 
+            <div class="language-used"> Languages used: <div class="technology"> C++ </div> </div>
+            <p>This week, I attempted to make an automatic sudoku solver in C++.</p>
+            <div align="center" class="subheading">Inspiration</div> 
+        
+            <p> My inspiration for making this project was from playing sudoku and wondering how easy the problem would be. I also wanted to attempt at making a naïve solution before trying to improve the algorithm.</p>
+        
+            <p>Sudoku involves a 9 x 9 grid. Each cell has a number from 1 - 9. The goal is to fill all the cells of the grid without breaking any rules. Every row, column or quadrant (3x3) cannot have duplicate numbers.</p>
+        
+            <p>To begin with I started off by how I wanted to represent the board. This was through making a 2-dimensional array.</p>
+        
+            <p>For my naïve approach, I wanted to mimic how wave function collapse works. In which every grid has a potential to be any number. By giving context around the cells, we reduce the chances of numbers being something else until finally there is only one number left. In my naïve approach, I increased the dimension of the board to be 3 dimensional to accommodate for the potential numbers in a cell.</p>
+        
+            <p>First, we populate the grid with numbers or empty cells. The empty cells will begin with an array of 1 - 9, while the cells we know will come with an array of the number they're suppose to be. Then we perform a collapse, in which we go through each cell, check if they need the cells to be “collapsed” and if so, remove numbers in the array that the cell wouldn't have.</p>
+        
+            <p>Working with the algorithm, I found it especially tedious when verifying for the quadrant of a cell. Running the algorithm proved to work with simple sudoku puzzles, since empty cells were given enough context to be collapsed. For harder puzzles, more context was required.</p>
+        
+            <p>I decided not to benchmark the speed of the algorithm until I was assured that the algorithm can solve harder puzzles.</p>
+        
+            <p>The first mistake I found involved the sudoku solver requiring more context through it's neighbouring rows and columns. Assume rows with an index of 0, 1 and 2 (x,y,z). If x and y has number 4, but z doesn't have the number 4, we can check each row in row z where 4 is valid. The same logic can be applied to a column base.</p>
+
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
