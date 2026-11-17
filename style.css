@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -8,16 +12,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f9fefc;
     color: #041a14;
-    padding: 5px;
-    margin-left: 100px;
-    margin-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     line-height: 25px;
   }
 
 a {
-    text-decoration: none;
-    color: #6b58e4;
-  }
+  text-decoration: none;
+  color: #6b58e4;
+}
 
 .intro {
     width:  100%;
@@ -27,9 +32,10 @@ a {
   }
 
 .title {
-    font-size: 75px;
-    font-weight: bold;
-  }
+  font-size: clamp(2rem, 4vw + 3rem, 7.5rem);
+  font-weight: bold;
+  line-height: normal;
+}
 
 .tools-section {
   margin-top: 10px;
@@ -64,33 +70,35 @@ a {
 }
 
 .language-used {
-    display: flex;
-    padding-left: 5px;
-    padding-top: 5px;
-    line-height: fit-content;
-  }
+  display: flex;
+  padding-left: 5px;
+  padding-top: 5px;
+  line-height: fit-content;
+}
 
 .subtitle {
   font-size: 50px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   padding: 2px;
 }
 
-  .black-box {
-    background-color: #041a14;
-    color: #f9fefc;
-    width: fit-content;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    white-space: nowrap;
-  } 
+.black-box {
+  background-color: #041a14;
+  color: #f9fefc;
+  width: fit-content;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+} 
 
-  .about-me-section {
+.about-me-section {
     background-color: #8ca3edac;
     border-radius: 10px;
     padding: 20px;
@@ -100,56 +108,65 @@ a {
     display: block;
   }
 
-  .about-me-section > p {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
+.about-me-section > p {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
 
 .container {
   background-color: #26dda967;
   margin: 10px;
-  min-width: 300px;
   max-width: 300px;
+  width: 100%;
   padding: 15px;
   border-radius: 10px;
-  height: fit-content;
 }
 
 .container img {
   width: 100%;
 }
 
-  .recently-finished-section {
-    background-color: #26dda992;
-    color: #041a14;
-    padding: 20px;
-    margin: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    width: 600px;
-  }
+.recently-finished-section {
+  background-color: #26dda992;
+  color: #041a14;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+}
 
-  .currently-working-section {
-    color: #041a14;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 10px;
-  }
+.recently-finished-section > img {
+  width: 100%;
+}
 
-  .education-section {
-    background-color: #6b58e4a0;
-    color:#f9fefc;
-    padding: 20px;
-    margin: auto;
-    border-radius: 10px;
-    width: fit-content;
-  }
+.currently-working-section {
+  color: #041a14;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 100%;
+}
 
-  .grade {
-    margin-left: 40px;
-  }
+.currently-working-section > .contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.education-section {
+  background-color: #6b58e4a0;
+  color:#f9fefc;
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.grade {
+  margin-left: 40px;
+}
 
   /*Blog presets*/
 
@@ -189,10 +206,12 @@ a {
     font-style: italic;
   }
 
-  .blog > img {
-    width: 600px;
-    margin: auto 20px;
-  }
+.blog > img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
 
   .caption {
     font-style: italic;
@@ -214,11 +233,11 @@ a {
     margin-bottom: 20px;
   }
 
-  .image-main-xxlarge {
-    max-width: 1000px;
-    margin: auto;
-    display: block;
-  }
+.image-main-xxlarge {
+  max-width: 90%;
+  margin: auto;
+  display: block;
+}
 
   .image-main-large {
     max-width: 300px;
@@ -297,14 +316,19 @@ a {
 /*Logo fancy turn*/
 .logo-turn {
   position: sticky;
-  height: 0px;
   top: 27px;
+  width: fit-content;
+  height: 300px; /* Adjust to match your logo's height */
+  margin-bottom: -300px; /* Pulls the rest of the page back up so it doesn't push content down */
+  background-clip: border-box;
+  overflow-x: clip;
+  pointer-events: none; /* Ensures the invisible box doesn't block clicking links underneath */
   z-index: -2;
+  translate: -55% -90%;
 }
 
 .logo-turn > * {
   opacity: 20%;
-  translate: -50% -50%;
 
   z-index: -99;
 
