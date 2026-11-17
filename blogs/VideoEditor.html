@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Custom Video Editor</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+</head>
+<body>
+    <!--Navbar-->
+    <p><a href="../index.html">Return</a></p>
+    <div class="heading" align="center">Custom Video Editor</div>
+    <div align="center" class="date">October 2026</div>
+    <img class="image-main-xxlarge" src="../Images/VideoEditor/Screenshot.png" alt="Video Editor Screenshots">
+    <div align="center">
+        <div align="center" class="blog">
+            <div class="tools-section">
+                    <div class="technology">C++</div>
+                    <div class="technology">Vulkan</div>
+                    <div class="technology">CMake</div>
+                    <div class="technology">FFMPEG</div>
+                    <div class="technology">Git/Github</div>
+                </div>
+            <p>This month, I decided to partake in making a custom video editor. It aims to be lightweight as well as easy to approach for new and experienced users. The project is currently under a MIT License and is still a work in progress. This article goes through my thought process making this video editor.</p>
+            
+            <div align="center" class="subheading">Inspiration</div>
+            <p>
+                Following the release of Claude Opus 5.5, many users of the model were able to recreate Adobe products as an open-source alternative. Whilst there has controversy surrounding this project such as methods for developing the software or how the features of the software produced were half working. It made me ask: is there an opening for an open-source alternative for video editors?
+            </p>
+            <p>
+                As of now I use the free version of DaVinci Pro 17. It is a powerful product and operates well out of the box. However, there are a few nitpicks that I have when it comes to using the software. For starters, the application takes really long to open on my system. I have around 4GB of usable ram and an Intel Evo i5, yet to load a project takes around 3-4 minutes for me. Another recent issue I had is implementing subtitles. I had tried implementing subtitles into my video and was upset to find that the feature was locked for paying members.
+            </p>
+            <p>
+                My extended use for Godot has given me a greater appreciation for open source and FOSS. Godot operates really well on my machine compared to other game engines. The UI is intuitive and easy to pick up. I decided to take that inspiration and apply this to the world of video editing, creating something clean and approachable to compete with industry giants like Premiere Pro and DaVinci
+            </p>
+            <div align="center" class="subheading">Proposed System</div>
+            <img class="image-main" src="../Images/VideoEditor/Diagram.png" alt="Diagram of the proposed system">
+            <div class="caption">Diagram of the proposed system</div>
+            <p>
+                The functionality of the project will operate around a core library. This library does all the functions that the video will need such as making and loading projects, loading videos, manipulating tracks and finally rendering the video output. The editor will act as a front to allow for users to utilise the methods and visualise the edited project. One interesting feature of the project is that the user does not need to use the editor to actually edit videos. The video editor can be operated procedurally with code. Project files can also be shared around or can be sent to a server to be rendered. Plugins can be loaded onto a plugins manager (interpreter?) and also utilise the editor or create custom tracks.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
