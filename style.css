@@ -153,6 +153,7 @@ a {
 .currently-working-section > .contents {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .education-section {
